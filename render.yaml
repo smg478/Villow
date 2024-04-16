@@ -14,6 +14,6 @@ services:
       - key: DATABASE_URL
         fromDatabase:
           name: dpg-coevl60cmk4c73fta630-a
-          property: postgres://villow_g3v0_user:ceoYx8oIY73o9V1Buez0ebgXR2pR7Ukx@dpg-coevl60cmk4c73fta630-a/villow_g3v0
+          property: "postgres://villow_g3v0_user:ceoYx8oIY73o9V1Buez0ebgXR2pR7Ukx@dpg-coevl60cmk4c73fta630-a/villow_g3v0"
       - key: RAILS_MASTER_KEY
         sync: false
