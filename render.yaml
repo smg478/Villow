@@ -1,7 +1,7 @@
 databases:
   - name: Villow
     databaseName: dpg-coevl60cmk4c73fta630-a
-    user: mlkz
+    user: villow_g3v0_user
 
 services:
   - type: web
