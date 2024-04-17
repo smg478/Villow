@@ -1,19 +1,14 @@
-databases:
-  - name: Villow
-    databaseName: dpg-coevl60cmk4c73fta630-a
-    user: villow_g3v0_user
-
+# Exported from Render on 2024-04-17T19:41:13Z
 services:
-  - type: web
-    name: Villow
-    runtime: ruby
-    buildCommand: "./bin/render-build.sh"
-    startCommand: "bundle exec puma -C config/puma.rb"
-    plan: free
-    envVars:
-      - key: DATABASE_URL
-        fromDatabase:
-          name: dpg-coevl60cmk4c73fta630-a
-          property: connectionString
-      - key: RAILS_MASTER_KEY
-        sync: false
+- type: web
+  name: Villow-ser
+  runtime: ruby
+  repo: https://github.com/smg478/Villow
+  plan: free
+  envVars:
+  - fromGroup: Villow-env
+  region: oregon
+  buildCommand: bundle install; bundle exec rake assets:precompile; bundle exec rake
+    assets:clean;
+  startCommand: bundle exec puma -t 5:5 -p ${PORT:-3000} -e ${RACK_ENV:-development}
+version: "1"
